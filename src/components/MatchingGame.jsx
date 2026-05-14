@@ -47,7 +47,7 @@ export default function MatchingGame() {
   const [openRightEditor, setOpenRightEditor] = useState(false);
 
   useEffect(() => {
-    fetch("/data/game.json")
+    fetch(`${import.meta.env.BASE_URL}data/game.json`)
       .then((res) => res.json())
       .then((data) => setGameData(data))
       .catch(() => setMessage("Could not load game.json"));
